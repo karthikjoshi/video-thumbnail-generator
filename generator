@@ -31,12 +31,13 @@ def generate_video_thumbnail(args):
     videoFileClip = VideoFileClip(args['<video>'])
     interval = int(args['<interval>'])
     size = (int(args['<width>']), int(args['<height>']))
-    outputPrefix = get_output_prefix()
+    #outputPrefix = get_output_prefix()
+    outputPrefix = args['<output>']
     generate_frames(videoFileClip, interval, outputPrefix, size)
 
     columns = int(args['<columns>'])
     output = args['<output>']
-    generate_sprite_from_frames(outputPrefix, columns, size, output)
+    #generate_sprite_from_frames(outputPrefix, columns, size, output)
 
 def generate_frames(videoFileClip, interval, outputPrefix, size):
     print "Extracting", int(videoFileClip.duration / interval), "frames"
